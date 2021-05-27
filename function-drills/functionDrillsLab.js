@@ -3,8 +3,11 @@
   Create a function called helloWorld which simply console logs 'Hello, World!'
   Call the function.
 */
-
-//CODE HERE
+function helloWorld()
+{
+  console.log("Hello, World!");
+}
+helloWorld();
 
 
 ////////////////// PROBLEM 2 ////////////////////
@@ -14,7 +17,11 @@
   Call the function, passing in an argument.
 */
 
-//CODE HERE
+function printName(theName)
+{
+  console.log(theName)
+}
+printName("Ronald");
 
 
 ////////////////// PROBLEM 3 ////////////////////
@@ -27,7 +34,10 @@
   Make sure to call your function and pass in an argument.
 */
 
-//CODE HERE
+function greeting(theName2){
+  console.log("Hello, " + theName2)
+}
+greeting("Boi");
 
 
 ////////////////// PROBLEM 4 ////////////////////
@@ -36,8 +46,12 @@
   The add function should RETURN the two parameters added together.
   Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
 */
-
-//CODE HERE
+function add(num1, num2)
+{
+  return num1+num2;
+}
+let sum = add(1, 2);
+console.log(sum);
 
 
 ////////////////// PROBLEM 5 ////////////////////
@@ -48,8 +62,23 @@
   If the name parameter is anything else, return 'Cool name, NAMEPARAM' (with NAMEPARAM being the value of the name parameter being passed in).
   Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
+function nameCheck(aName){
+  if(aName==="Steven")
+  {
+    return "What is up Steven?"
+  }
+  if(aName==="Bryan")
+  {
+    return "What is up Bryan?"
+  }
+  else
+  {
+    return "Cool name, " + aName + "."
+  }
+}
+let nameGreeting = nameCheck("Steven");
+console.log(nameGreeting);
 
-//CODE HERE
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -62,8 +91,26 @@
   Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
 */
 
-//CODE HERE
-
+function faveColorFinder(color)
+{
+  if (color === "red")
+  {
+    return "red is a great color";
+  }
+  if (color === "green")
+  {
+    return "green is a solid favorite color";
+  }
+  if (color === "black")
+  {
+    return "so trendy";
+  }
+  else{
+    return "your color sucks";
+  }
+}
+let colorRating = faveColorFinder("red")
+console.log(colorRating);
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -72,8 +119,14 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
   Using a for loop, iterate over that array and console log each name.
   Call the function, passing in the `namesArr` array (above).
 */
-
-//CODE HERE
+function printAllNames(arrOfNames)
+{
+  for(let i=0; i<arrOfNames.length; i++)
+  {
+    console.log(arrOfNames[i]);
+  }
+}
+printAllNames(namesArr);
 
 
 ////////////////// PROBLEM 8 ////////////////////
@@ -84,11 +137,21 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
   Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
 */
 
-//CODE HERE
+function thatsOdd(numero){
+  if(numero % 2 === 0)
+  {
+    return "That's not odd"
+  }
+  else{
+    return "That is odd indeed"
+  }
+}
+let oddChecker = thatsOdd(3);
+console.log(oddChecker);
 
 
 ////////////////// PROBLEM 9 ////////////////////
-let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107]
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
   Inside of the bigOrSmall function, create a new array called 'answers'. 
@@ -98,7 +161,23 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
   Return the answers array inside of the function to a variable called `arrayEvaluator`.
 */
 
-//CODE HERE
+function bigOrSmall(arr){
+  let answers = [];
+  for(let j=0; j<arr.length; j++)
+  {
+    if(arr[j] > 100)
+    {
+      answers.push("big");
+    }
+    if(arr[j] <= 100)
+    {
+      answers.push("small")
+    }
+  }
+  return answers;
+}
+let arrayEvaluator = bigOrSmall(bigOrSmallArray);
+console.log(arrayEvaluator);
 
 
 ////////////////// PROBLEM 10 ////////////////////
@@ -109,8 +188,18 @@ let loser = 'Glimmer'
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
-//CODE HERE
-
+function theEliminator(theContestants, theLoser)
+{
+  for(let k=0; k<theContestants.length; k++)
+  {
+    if(theContestants[k] === theLoser)
+    {
+      theContestants.splice(k, 1);
+    }
+  }
+  return theContestants;
+}
+console.log(theEliminator(contestants, loser));
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -118,32 +207,86 @@ let sampleString = "Hi, my name is Kylo."
   Write a function that takes im one argument, a string. The function should then console.log that string, in entirely uppercase characters.
 */
 
-//CODE HERE
+function inputString(str)
+{
+  console.log(str.toUpperCase());
+}
+inputString(sampleString);
 
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
+  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold.
+  Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
+let goldpieces = 10;
 
-//CODE HERE
+function buybuy(gold){ 
+  let frogsBought=0;                //frogs we have bought is zero right now
+  while(gold>=0)                    //while gold is more than or equal to 0...
+  {                                 //loop the following code until the statement is false
+    gold=gold-3;                    //subtract 3 from total gold pieces
+    frogsBought++;                  //add one to the number of frogs bought
+
+    if(gold<0)                      //if the amount of gold is negative
+    {
+      frogsBought--;                //subtract one from frogs bought
+    }
+  }
+  return frogsBought;               //return the value of frogsBought
+}
+console.log(buybuy(goldpieces));    //print out the return of the function buybuy with parameter goldpieces
 
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
-  You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in problem 12 (give it the same name just add a 2 to the end of it) that fixes this bug. Store the returned value to a variable called `totalFrogs2`.
+  You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, the function would return to you 1.3333... 
+  However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in problem 12 
+  (give it the same name just add a 2 to the end of it) that fixes this bug. Store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
 
 
 ////////////////// PROBLEM 14 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,4,5,6,7,8,9]
 /*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order.
+  The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function
+  invoked. Use the sample array to test this function.
 */
-
+function checkIfAsc(arr)
+{
+  let lessthan=true;
+  for (let t=0; t<arr.length; t++)
+  {
+    if(t !== arr.length-1)
+    {
+      if(lessthan===true)
+      {
+        if(arr[t]<arr[t+1])
+        {
+          lessthan=true;
+        }
+        else
+        {
+          lessthan=false;
+        }
+      }
+      //do nothing
+    }
+    //do nothing
+  }
+  if (lessthan===true)
+  {
+    return "The array is in ascending order";
+  }
+  else if(lessthan===false){
+    return "The array is not in ascending order";
+  }
+}
+console.log(checkIfAsc(sampleArray));
 //CODE HERE
 
 
