@@ -274,9 +274,9 @@ function checkIfAsc(arr)
           lessthan=false;
         }
       }
-      //do nothing
+     
     }
-    //do nothing
+    
   }
   if (lessthan===true)
   {
